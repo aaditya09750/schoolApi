@@ -9,12 +9,21 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // MySQL connection setup
+
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',       // your MySQL username
-  password: 'Chhatrapati0975@___', // your MySQL password
-  database: 'school_db' // your database name
+  host: 'sql12.freesqldatabase.com',   // your FreeSQLDatabase host
+  user: 'sql12794575',                  // your database username
+  password: 'LqIi7hy5Dm',               // your database password
+  database: 'sql12794575',              // your database name
+  port: 3306                           // port number (default MySQL port)
 });
+
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',       // your MySQL username
+//   password: 'Chhatrapati0975@___', // your MySQL password
+//   database: 'school_db' // your database name
+// });
 
 // Connect to database
 db.connect(err => {
@@ -103,3 +112,4 @@ app.get('/listSchools', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
